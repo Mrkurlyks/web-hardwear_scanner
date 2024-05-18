@@ -106,5 +106,4 @@ def run_script():
         save_to_file(data_to_save, file_path)
 
         messagebox.showinfo("Информация", f"Информация сохранена в файл: {file_path}")
-
 run_script()
