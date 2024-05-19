@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Ввод данных{% endblock title %}
+{% block body %}
+    <form action="/process" method="post">
+        <label for="input_value">Введите значение:</label><br>
+        <input type="text" id="input_value" name="input_value"><br><br>
+        <button type="submit" name="action" value="download">Скачать результаты</button>
+        <button type="submit" name="action" value="show">Показать результаты на странице</button>
+    </form>
+{% endblock body %}
