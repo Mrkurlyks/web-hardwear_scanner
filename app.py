@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_file
-#from hs import hardwear_scanner
-from process_data import process_data
+
+from hs.hardwear_scanner import run_script
 
 
 app = Flask(__name__)
@@ -19,8 +19,8 @@ def test():
 
 @app.route('/process', methods=['POST'])
 def process():
-    input_data = request.form['input_value']
-    processed_data = process_data(input_data)
+    remote_computer = request.form['input_value']
+    processed_data = run_script(remote_computer)
     button = request.form['action']
     
     if button == 'download':
