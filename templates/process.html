@@ -1,2 +1,11 @@
 {% extends "base.html" %}
 
+{% block title %}
+Результаты работы скрипта
+{% endblock title %}
+
+{% block body %}
+{% for block in processed_data_blocks %}
+    <div>{{ block }}</div>
+{% endfor %}
+{% endblock body %}

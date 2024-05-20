@@ -12,9 +12,9 @@ def home():
 def faq():
     return render_template('faq.html')
 
-@app.route('/hs')
-def test():
-    return render_template("hs.html")
+@app.route('/hardwear_scanner')
+def hardwear_scanner():
+    return render_template("hardwear_scanner.html")
 
 @app.route('/process', methods=['POST'])
 def process():
@@ -28,11 +28,11 @@ def process():
                 file.write(processed_data)
             return send_file(file_path, as_attachment=True)
         else:
-            return processed_data
+            processed_data_blocks = processed_data.split('\n\n')
+            return render_template('process.html', processed_data_blocks=processed_data_blocks)
     else:
         return "нечего не ввел."
 cliner()   
 
-   
 if __name__ == '__main__':
     app.run(debug=True)
