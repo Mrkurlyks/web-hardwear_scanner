@@ -1,6 +1,6 @@
 import os
 
-def cliner():
+def cleaner():
     try:
         current_dir = os.getcwd()
         files = os.listdir(current_dir)

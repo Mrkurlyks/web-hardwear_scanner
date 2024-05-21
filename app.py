@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_file
 from hs.hardwear_scanner import run_script
-from cliner import cliner
+from cleaner import cleaner
 
 app = Flask(__name__)
 
@@ -14,6 +14,7 @@ def faq():
 
 @app.route('/hardwear_scanner')
 def hardwear_scanner():
+    cleaner()
     return render_template("hardwear_scanner.html")
 
 @app.route('/process', methods=['POST'])
@@ -31,8 +32,7 @@ def process():
             processed_data_blocks = processed_data.split('\n\n')
             return render_template('process.html', processed_data_blocks=processed_data_blocks)
     else:
-        return "нечего не ввел."
-cliner()   
+        return "нечего не ввел." 
 
 if __name__ == '__main__':
     app.run(debug=True)
