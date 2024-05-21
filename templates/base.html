@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <!-- Add any additional CSS or CDN links for styling here -->
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>My GitHub-like Project</h1>
+            <h1>ScriptHub Project</h1>
             <nav>
                 <ul>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Главная</a></li>
                     <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-                    <li><a href="{{ url_for('hardwear_scanner') }}">Hardware Scanner</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,6 +23,10 @@
             {% block content %}{% endblock %}
         </div>
     </main>
-    <!-- Add any additional scripts here -->
+    <footer>
+        <div class="container">
+            <p>Сделано мной любимым для ТОВТ</p>
+        </div>
+    </footer>
 </body>
 </html>

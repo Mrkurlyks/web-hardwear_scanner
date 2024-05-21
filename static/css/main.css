@@ -1,115 +1,79 @@
-/* Reset and Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-/* Header Styles */
 header {
-    background-color: #343a40;
+    background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 20px 0;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 1.8rem;
     margin: 0;
+    font-size: 36px;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    display: flex;
 }
 
-nav li {
-    margin-right: 1rem;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-nav a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #ffc107;
-}
-
-/* Main Content Styles */
 main {
-    padding: 2rem 0;
+    padding: 20px 0;
 }
 
-/* Form Styles */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-form .input-group {
-    display: flex;
-    align-items: center;
-}
-
-form input[type="text"] {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ced4da;
-    border-radius: 3px;
-}
-
-form button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button.btn-view {
-    background-color: #007bff;
+footer {
+    background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
-form button.btn-download {
-    background-color: #28a745;
-    color: #fff;
+footer p {
+    margin: 0;
 }
 
-form button:hover {
-    opacity: 0.8;
+/* Дополнительные стили */
+.faq-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Result Styles */
-pre {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    white-space: pre-wrap;
-    font-size: 1.1rem;
+.faq-list li {
+    margin-bottom: 20px;
+}
+
+.faq-list li h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.faq-list li p {
+    margin-top: 5px;
 }

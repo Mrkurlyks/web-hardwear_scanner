@@ -23,12 +23,12 @@ def get_ddr_type(memory_type):
             return memory_types.get(str(memory_type), "Неизвестно")
     except FileNotFoundError:
         return "Неизвестно"
-
+    
 def run_script(remote_computer=None):
     pythoncom.CoInitialize()
     try:
         c = wmi.WMI(computer=remote_computer)
-    
+        
         data_to_save = []
     
         current_computer = platform.node()
@@ -74,5 +74,7 @@ def run_script(remote_computer=None):
             data_to_save.append(f"Модель: {gpu.Name}\n")
         
         return "\n".join(data_to_save)
+    except Exception as e:
+        return f"Произошла ошибка: {e}"
     finally:
         pythoncom.CoUninitialize()

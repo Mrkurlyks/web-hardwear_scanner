@@ -3,11 +3,11 @@
 {% block content %}
 <h2>Hardware Scanner</h2>
 <form id="scanner-form" class="scanner-form" action="{{ url_for('process') }}" method="post">
-    <label for="input_value">Remote Computer:</label>
+    <label for="input_value">Номер или ip PC:</label>
     <div class="input-group">
         <input type="text" id="input_value" name="input_value">
-        <button type="submit" name="action" value="view" class="btn btn-view">View</button>
-        <button type="submit" name="action" value="download" class="btn btn-download">Download</button>
+        <button type="submit" name="action" value="view" class="btn btn-view">просмотреть</button>
+        <button type="submit" name="action" value="download" class="btn btn-download">скачать</button>
     </div>
 </form>
 <div id="results"></div>
