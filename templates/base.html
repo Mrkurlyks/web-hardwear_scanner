@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>{% block title %}{% endblock title %}</title>
+    <!-- Add any additional CSS or CDN links for styling here -->
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="лого"></a>
+        <div class="container">
+            <h1>My GitHub-like Project</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                    <li><a href="{{ url_for('hardwear_scanner') }}">Hardware Scanner</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav">
-                <li><a href="{{ url_for('home') }}">Главная</a></li>
-                <li><a href="{{ url_for('faq') }}">FAQs</a></li>
-            </ul>
-        </nav>
     </header>
-    <div class="content">
-        {% block body %}{% endblock body %}
-    </div>
-    <footer>
-        <p>&copy; сотварино силами меня любимого для любимого ТОВТ</p>
-    </footer>
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <!-- Add any additional scripts here -->
 </body>
 </html>

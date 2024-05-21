@@ -1,9 +1,7 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}
-главная стр
-{% endblock title %}
-
-{% block body %}
-<li><a href="{{ url_for('hardwear_scanner') }}">hardwear_scanner</a></li>
-{% endblock body %}
+{% block content %}
+<h2>Welcome to My Project</h2>
+<li><a href="{{ url_for('hardwear_scanner') }}">Hardware Scanner</a></li>
+<p>This is a simple implementation of a GitHub-like website using Flask.</p>
+{% endblock %}

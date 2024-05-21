@@ -1,120 +1,115 @@
-:root {
-    --header-background: #24292e; /* Темно-серый для заголовка */
-    --body-background: #404041; /* Светло-серый для тела */
-    --text-color: #bbbbbb; /* Темный цвет текста для контраста */
-    --link-color: #0366d6; /* Синий для ссылок */
-    --border-color: #e1e4e846; /* Цвет для границ */
-}
-
-/* Основные стили для body */
-body {
-    background-color: var(--body-background); /* Цвет фона для тела */
-    color: var(--text-color); /* Цвет текста */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+/* Reset and Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Стили для header */
-header {
-    background-color: var(--header-background); /* Цвет фона для заголовка */
-    color: #ffffff; /* Цвет текста в заголовке */
-    padding: 16px 0; /* Внутренний отступ сверху и снизу */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Тень под заголовком */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Внутренний отступ по бокам */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
 }
 
-/* Стили для навигации внутри header */
-header .nav {
-    display: flex;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    display: flex;
 }
 
-header .nav-item {
-    margin-right: 20px; /* Отступ между элементами навигации */
+nav li {
+    margin-right: 1rem;
 }
 
-header .nav-link {
-    color: #ffffff; /* Цвет текста ссылок в заголовке */
+nav a {
+    color: #fff;
     text-decoration: none;
-    padding: 8px 16px; /* Внутренний отступ ссылок */
-    border-radius: 6px; /* Скругленные углы */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-header .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Фон при наведении */
+nav a:hover {
+    color: #ffc107;
 }
 
-/* Стили для контейнера */
-.container {
-    max-width: 960px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
-    padding: 16px; /* Внутренний отступ */
+/* Main Content Styles */
+main {
+    padding: 2rem 0;
 }
 
-/* Стили для секции контента */
-.content {
-    background-color: #414141; /* Цвет фона контента */
-    border: 1px solid var(--border-color); /* Граница вокруг контента */
-    border-radius: 6px; /* Скругленные углы */
-    padding: 20px; /* Внутренний отступ */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Тень вокруг контента */
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для заголовков */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color); /* Цвет текста заголовков */
-    margin-top: 1em; /* Отступ сверху */
-    margin-bottom: 0.5em; /* Отступ снизу */
-    font-weight: 600; /* Жирность текста */
+form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Стили для параграфов */
-p {
-    margin: 0 0 1em; /* Отступ снизу */
-    line-height: 1.6; /* Высота строки */
+form .input-group {
+    display: flex;
+    align-items: center;
 }
 
-/* Стили для ссылок */
-a {
-    color: var(--link-color); /* Цвет ссылок */
-    text-decoration: none;
+form input[type="text"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
 }
 
-a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
-}
-
-/* Стили для кнопок */
-.button {
-    display: inline-block;
-    padding: 10px 20px; /* Внутренний отступ кнопок */
-    font-size: 16px; /* Размер текста */
-    font-weight: 600; /* Жирность текста */
-    color: #ffffff; /* Цвет текста кнопок */
-    background-color: var(--link-color); /* Цвет фона кнопок */
+form button {
+    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 4px; /* Скругленные углы */
-    text-align: center;
-    text-decoration: none;
+    border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #0056b3; /* Цвет фона при наведении */
+form button.btn-view {
+    background-color: #007bff;
+    color: #fff;
 }
 
-/* Стили для подвала */
-.footer {
-    background-color: var(--header-background); /* Цвет фона подвала */
-    color: #ffffff; /* Цвет текста подвала */
-    text-align: center;
-    padding: 10px 0; /* Внутренний отступ сверху и снизу */
-    margin-top: 20px; /* Отступ сверху */
-    border-top: 1px solid var(--border-color); /* Граница сверху подвала */
+form button.btn-download {
+    background-color: #28a745;
+    color: #fff;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+/* Result Styles */
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
 }

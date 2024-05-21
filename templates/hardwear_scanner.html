@@ -1,10 +1,14 @@
-{% extends "base.html" %}
-{% block title %}Ввод данных{% endblock title %}
-{% block body %}
-    <form action="/process" method="post">
-        <label for="input_value">Введите значение:</label><br>
-        <input type="text" id="input_value" name="input_value"><br><br>
-        <button type="submit" name="action" value="download">Скачать результаты</button>
-        <button type="submit" name="action" value="show">Показать результаты на странице</button>
-    </form>
-{% endblock body %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Hardware Scanner</h2>
+<form id="scanner-form" class="scanner-form" action="{{ url_for('process') }}" method="post">
+    <label for="input_value">Remote Computer:</label>
+    <div class="input-group">
+        <input type="text" id="input_value" name="input_value">
+        <button type="submit" name="action" value="view" class="btn btn-view">View</button>
+        <button type="submit" name="action" value="download" class="btn btn-download">Download</button>
+    </div>
+</form>
+<div id="results"></div>
+{% endblock %}
