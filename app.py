@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request, send_file
 from hs.hardwear_scanner import run_script
 from cleaner import cleaner
+import logging
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s', filename='app.log', filemode='a')
+logger = logging.getLogger(__name__)
+
 
 @app.route('/')
 def home():
@@ -35,4 +40,4 @@ def process():
         return "нечего не ввел." 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='192.168.1.3', port=80, debug=True)
