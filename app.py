@@ -22,9 +22,9 @@ def installer():
 
 @app.route('/install_process', methods=['POST'])
 def install_process():    
-    computer_name_or_ip = request.form.get('input_value')
-    selected_file_path = request.form.get('selected_file_path')
-    return render_template('install_process.html', computer_name_or_ip=computer_name_or_ip, selected_file_path=selected_file_path)
+    remote_computer = request.form.get('input_value')
+    file_path = request.form.get('selected_file_path')
+    return render_template('install_process.html', computer_name_or_ip=remote_computer, selected_file_path=file_path)
       
 @app.route('/faq', methods=['GET', 'POST'])
 def faq():
@@ -40,6 +40,9 @@ def faq():
 @app.route('/admin_panel')
 def admin_panel():
     enumerated_bug_reports = list(enumerate(bug_reports)) 
+    file_path = "bug report.log"
+    with open(file_path, 'w') as file:
+        file.write(enumerated_bug_reports)
     return render_template('admin_panel.html', bug_reports=enumerated_bug_reports)
 
 @app.route('/respond_to_bug', methods=['POST'])
