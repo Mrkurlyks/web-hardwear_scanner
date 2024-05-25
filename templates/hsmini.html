@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Информация о PC</h2>
+<div id="results">
+    {% for block in mini_processed_data_blocks %}
+        <pre>{{ block }}</pre>
+    {% endfor %}
+</div>
+{% endblock %}

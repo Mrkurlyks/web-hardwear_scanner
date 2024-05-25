@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Hardware Scanner mini</h2>
+<form id="mini_scanner-form" class="mini_scanner-form" action="{{ url_for('hsmini') }}" method="post">
+    <label for="input">Номер или ip PC:</label>
+    <div class="input-group">
+        <input type="text" id="input" name="input">
+        <button type="submit" name="action" value="vie" class="btn btn-view">просмотреть</button>
+        <button type="submit" name="action" value="down" class="btn btn-download">скачать</button>
+    </div>
+</form>
+<div id="results"></div>
+{% endblock %}

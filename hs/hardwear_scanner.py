@@ -10,9 +10,11 @@ def get_vendor_name(device_id):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             vendor_data = json.load(file)
-            return vendor_data.get(str(device_id), "Неизвестно")
-    except FileNotFoundError:
-        return "Неизвестно"
+            vendor = vendor_data.get(str(device_id), 1)
+            if vendor == 1: return device_id
+            return vendor 
+    except None:
+        return ("не найдена бд")
 
 def get_ddr_type(memory_type):
     current_dir = os.path.dirname(__file__)
@@ -20,9 +22,11 @@ def get_ddr_type(memory_type):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             memory_types = json.load(file)
-            return memory_types.get(str(memory_type), "Неизвестно")
+            types = memory_types.get(str(memory_type), 1)
+            if types == 1: return memory_type
+            return memory_types.get(str(memory_type))
     except FileNotFoundError:
-        return "Неизвестно"
+        return ("не найдена бд")
     
 def run_script(remote_computer=None):
     pythoncom.CoInitialize()
@@ -31,8 +35,7 @@ def run_script(remote_computer=None):
         
         data_to_save = []
     
-        current_computer = platform.node()
-        data_to_save.append(f"Имя компьютера: {current_computer}\n")
+        data_to_save.append(f"Имя компьютера: {remote_computer}\n")
         
         for motherboard in c.Win32_BaseBoard():
             data_to_save.append("Материнская плата:")
@@ -76,5 +79,32 @@ def run_script(remote_computer=None):
         return "\n".join(data_to_save)
     except Exception as e:
         return f"Произошла ошибка: {e}"
+    finally:
+        pythoncom.CoUninitialize()
+
+def run_mini (remote_computer=None):
+    pythoncom.CoInitialize()
+    try:
+        c = wmi.WMI(computer=remote_computer)
+        
+        mini_data_to_save = []
+    
+        mini_data_to_save.append(f"Имя компьютера: {remote_computer}\n")
+        for processor in c.Win32_Processor():
+            mini_data_to_save.append(f"Процессор: {processor.Name}, {processor.MaxClockSpeed} МГц\n")
+        
+        for memory in c.Win32_PhysicalMemory():
+            device_id = memory.Manufacturer
+            memory_type = memory.MemoryType
+            mini_data_to_save.append(f"Память: {int(memory.Capacity) / 1048576:.2f} MB {memory.Speed} МГц {get_vendor_name(device_id)} {get_ddr_type(memory_type)} \n")
+        for disk in c.Win32_DiskDrive():
+            mini_data_to_save.append(f"Харрд: {disk.Model} {int(disk.Size) / (1024 ** 3):.2f} ГБ {disk.SerialNumber.strip()}\n")
+     
+        for gpu in c.Win32_VideoController():
+            mini_data_to_save.append(f"Видеокарта: {gpu.Name}\n")
+            
+        return "\n".join(mini_data_to_save)
+    except Exception as e:
+        return f"Произошла ошибка скрипта: {e}"
     finally:
         pythoncom.CoUninitialize()
