@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Ninja installer</h2>
+<form id="scanner-form" class="scanner-form" action="{{ url_for('install_process') }}" method="post">
+    <label for="input_value">Номер или IP PC:</label>
+    <div class="input-group">
+        <input type="text" id="input_value" name="input_value">
+        <button type="submit" name="action" value="view" class="btn btn-view">Установить</button>
+    </div>
+    <br>
+    <label for="file_path">Путь до файла:</label>
+    <div class="input-group">
+        <input type="file" id="file_path" name="file_path">
+    </div>
+    <input type="hidden" id="selected_file_path" name="selected_file_path">
+</form>
+<div id="results"></div>
+
+<script>
+    document.getElementById('scanner-form').addEventListener('submit', function(event) {
+        var selectedFilePath = document.getElementById('file_path').value;
+        document.getElementById('selected_file_path').value = selectedFilePath;
+    });
+</script>
+{% endblock %}

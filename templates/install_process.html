@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Информация о PC</h2>
 <div id="results">
-    {% for block in mini_processed_data_blocks %}
+    {% for block in computer_name_or_ip %}
         <pre>{{ block }}</pre>
     {% endfor %}
 </div>

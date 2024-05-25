@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Ошибочки</h1>
+    <ul>
+        {% for index, bug_report in bug_reports %}
+            <li>{{ index }}: {{ bug_report }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>пометки</h2>
+    <form method="post" action="/respond_to_bug">
+        <select name="bug_report_id">
+            {% for index, _ in bug_reports %}
+                <option value="{{ index }}">{{ index }}</option>
+            {% endfor %}
+        </select><br>
+        <textarea name="admin_response" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="пометить">
+    </form>
+</body>
+{% endblock %}

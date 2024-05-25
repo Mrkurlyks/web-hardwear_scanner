@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>FAQ</h2>
-<p>здес будет чтонибудь когданибудь</p>
+<body>
+    <h2>Репорты сюда</h2>
+    <form method="post" action="/faq">
+        <label for="bug_description">Вопросы предложения тоже сюда:</label><br>
+        <textarea id="bug_description" name="bug_description" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
 {% endblock %}

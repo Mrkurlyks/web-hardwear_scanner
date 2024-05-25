@@ -1,7 +1,6 @@
 import wmi
 import json
 import os
-import platform
 import pythoncom
 
 def get_vendor_name(device_id):

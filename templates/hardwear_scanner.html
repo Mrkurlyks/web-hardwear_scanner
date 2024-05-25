@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>Hardware Scanner</h2>
-<form id="scanner-form" class="scanner-form" action="{{ url_for('process') }}" method="post">
+<form id="scanner-form" class="scanner-form" action="{{ url_for('hs_results') }}" method="post">
     <label for="input_value">Номер или ip PC:</label>
     <div class="input-group">
         <input type="text" id="input_value" name="input_value">
