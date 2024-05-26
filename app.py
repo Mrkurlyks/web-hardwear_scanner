@@ -5,6 +5,7 @@ from cleaner import cleaner
 import logging
 import os
 import json
+
 my_ip ='192.168.1.224'
 bug_reports = []
 
@@ -22,7 +23,9 @@ with open(file_path, 'r', encoding='utf-8') as file:
 @app.before_request        
 def limit_remote_addr():
     if request.remote_addr not in wait_list:
-        abort(403) 
+        ip_address = request.remote_addr
+        logger.warning(f"лезет без доступа {ip_address}")
+        abort(403,f'пришли мне свой ip в джабер выдам инвайт') 
         
 @app.route('/')
 def home():

@@ -22,3 +22,25 @@
 2024-05-26 19:58:39,720 ERROR installer Thread-2 (process_request_thread) : Произошла ошибка при установке файла C:\fakepath\6yst04af40cm90.exe на компьютер 192.168.1.224 (IP: 192.168.1.224): Command '['powershell.exe', '-Command', "\n    $session = New-PSSession -ComputerName 192.168.1.224;\n    Invoke-Command -Session $session -ScriptBlock {\n        if (-Not (Test-Path -Path '\\\\192.168.1.224\\C$\\TEMP\\')) {\n            New-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\' -ItemType Directory;\n        }\n        Copy-Item -Path '\\\\LOOPA\\C$\\fakepath\\6yst04af40cm90.exe' -Destination '\\\\192.168.1.224\\C$\\TEMP\\';\n        $process = Start-Process msiexec.exe -ArgumentList '/i', '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe', '/quiet', '/norestart' -Wait -PassThru;\n        Remove-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe';\n        return $process.ExitCode;\n    };\n    Remove-PSSession -Session $session;\n    "]' returned non-zero exit status 1.. Код возврата: 1.
 2024-05-26 19:58:39,721 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:58:39] "POST /install_process HTTP/1.1" 200 -
 2024-05-26 19:58:39,830 INFO werkzeug Thread-3 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:58:39] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:02:34,998 INFO werkzeug Thread-6 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:02:34] "GET / HTTP/1.1" 200 -
+2024-05-26 20:02:35,009 INFO werkzeug Thread-7 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:02:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:03:09,713 INFO werkzeug Thread-9 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:03:09] "GET /faq HTTP/1.1" 200 -
+2024-05-26 20:03:09,736 INFO werkzeug Thread-10 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:03:09] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:11:46,960 INFO werkzeug MainThread :  * Detected change in 'c:\\Users\\xoma1\\OneDrive\\Рабочий стол\\python_progekt\\web-hardwear_scanner\\app.py', reloading
+2024-05-26 20:11:47,054 INFO werkzeug MainThread :  * Restarting with stat
+2024-05-26 20:11:47,889 WARNING werkzeug MainThread :  * Debugger is active!
+2024-05-26 20:11:47,890 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 20:12:04,134 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:04] "GET /faq HTTP/1.1" 200 -
+2024-05-26 20:12:04,252 INFO werkzeug Thread-3 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:04] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:12:06,445 INFO werkzeug Thread-4 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:06] "GET / HTTP/1.1" 200 -
+2024-05-26 20:12:06,468 INFO werkzeug Thread-5 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:06] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:12:07,639 INFO werkzeug Thread-7 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:07] "GET /hardwear_scanner HTTP/1.1" 200 -
+2024-05-26 20:12:07,664 INFO werkzeug Thread-8 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:07] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 20:12:36,024 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.224:80
+2024-05-26 20:12:36,030 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-26 20:12:36,042 INFO werkzeug MainThread :  * Restarting with stat
+2024-05-26 20:12:36,860 WARNING werkzeug MainThread :  * Debugger is active!
+2024-05-26 20:12:36,863 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 20:12:37,432 WARNING __main__ Thread-2 (process_request_thread) : лезет без доступа 192.168.1.224
+2024-05-26 20:12:37,436 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.224 - - [26/May/2024 20:12:37] "[31m[1mGET /hardwear_scanner HTTP/1.1[0m" 403 -
