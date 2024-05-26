@@ -1,9 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div id="results">
-    {% for block in computer_name_or_ip, selected_file_path %}
-        <pre>{{ block }}</pre>
-    {% endfor %}
-</div>
+    <p>{{ result_install }}</p>
 {% endblock %}

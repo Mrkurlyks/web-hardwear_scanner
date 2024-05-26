@@ -1,30 +1,24 @@
-2024-05-25 22:18:00,674 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://192.168.0.117:80
-2024-05-25 22:18:00,674 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
-2024-05-25 22:18:00,690 INFO werkzeug MainThread :  * Restarting with stat
-2024-05-25 22:18:02,104 WARNING werkzeug MainThread :  * Debugger is active!
-2024-05-25 22:18:02,119 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
-2024-05-25 22:18:02,603 INFO werkzeug Thread-2 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:18:02] "GET /installer HTTP/1.1" 200 -
-2024-05-25 22:18:02,695 INFO werkzeug Thread-3 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:18:02] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-2024-05-25 22:18:14,172 INFO werkzeug Thread-4 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:18:14] "POST /install_process HTTP/1.1" 200 -
-2024-05-25 22:18:14,191 INFO werkzeug Thread-5 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:18:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-2024-05-25 22:18:55,641 INFO werkzeug Thread-7 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:18:55] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-2024-05-25 22:24:54,645 INFO werkzeug MainThread :  * Detected change in 'c:\\Users\\xoma1\\OneDrive\\Рабочий стол\\python_progekt\\web-hardwear_scanner\\app.py', reloading
-2024-05-25 22:24:54,739 INFO werkzeug MainThread :  * Restarting with stat
-2024-05-25 22:24:55,527 WARNING werkzeug MainThread :  * Debugger is active!
-2024-05-25 22:24:55,537 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
-2024-05-25 22:27:55,410 INFO werkzeug Thread-4 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:27:55] "[35m[1mPOST /install_process HTTP/1.1[0m" 500 -
-2024-05-25 22:27:55,616 INFO werkzeug Thread-5 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:27:55] "GET /install_process?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2024-05-25 22:27:55,667 INFO werkzeug Thread-6 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:27:55] "GET /install_process?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2024-05-25 22:27:55,705 INFO werkzeug Thread-7 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:27:55] "GET /install_process?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2024-05-25 22:27:55,819 INFO werkzeug Thread-8 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:27:55] "[36mGET /install_process?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
-2024-05-25 22:28:30,834 INFO werkzeug MainThread :  * Detected change in 'c:\\Users\\xoma1\\OneDrive\\Рабочий стол\\python_progekt\\web-hardwear_scanner\\app.py', reloading
-2024-05-25 22:28:30,900 INFO werkzeug MainThread :  * Restarting with stat
-2024-05-25 22:28:31,655 WARNING werkzeug MainThread :  * Debugger is active!
-2024-05-25 22:28:31,663 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
-2024-05-25 22:28:36,436 INFO werkzeug Thread-2 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:28:36] "POST /install_process HTTP/1.1" 200 -
-2024-05-25 22:28:36,575 INFO werkzeug Thread-3 (process_request_thread) : 192.168.0.117 - - [25/May/2024 22:28:36] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-2024-05-25 22:50:36,440 INFO werkzeug MainThread :  * Detected change in 'c:\\Users\\xoma1\\OneDrive\\Рабочий стол\\python_progekt\\web-hardwear_scanner\\app.py', reloading
-2024-05-25 22:50:36,525 INFO werkzeug MainThread :  * Restarting with stat
-2024-05-25 22:50:37,413 WARNING werkzeug MainThread :  * Debugger is active!
-2024-05-25 22:50:37,422 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 19:55:50,537 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.224:80
+2024-05-26 19:55:50,537 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-26 19:55:50,537 INFO werkzeug MainThread :  * Restarting with stat
+2024-05-26 19:55:51,637 WARNING werkzeug MainThread :  * Debugger is active!
+2024-05-26 19:55:51,653 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 19:55:58,666 INFO installer Thread-2 (process_request_thread) : Установка файла C:\fakepath\6yst04af40cm90.exe на компьютер 192.168.1.224 (IP: 192.168.1.224) начата.
+2024-05-26 19:55:59,209 ERROR installer Thread-2 (process_request_thread) : Произошла ошибка при установке файла C:\fakepath\6yst04af40cm90.exe на компьютер 192.168.1.224 (IP: 192.168.1.224): Command '['powershell.exe', '-Command', "\n    $session = New-PSSession -ComputerName 192.168.1.224;\n    Invoke-Command -Session $session -ScriptBlock {\n        if (-Not (Test-Path -Path '\\\\192.168.1.224\\C$\\TEMP\\')) {\n            New-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\' -ItemType Directory;\n        }\n        Copy-Item -Path '\\\\LOOPA\\C$\\fakepath\\6yst04af40cm90.exe' -Destination '\\\\192.168.1.224\\C$\\TEMP\\';\n        $process = Start-Process msiexec.exe -ArgumentList '/i', '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe', '/quiet', '/norestart' -Wait -PassThru;\n        Remove-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe';\n        return $process.ExitCode;\n    };\n    Remove-PSSession -Session $session;\n    "]' returned non-zero exit status 1.. Код возврата: 1.
+2024-05-26 19:55:59,209 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:55:59] "POST /install_process HTTP/1.1" 200 -
+2024-05-26 19:55:59,308 INFO werkzeug Thread-3 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:55:59] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2024-05-26 19:57:22,815 INFO werkzeug MainThread :  * Detected change in 'c:\\Users\\xoma1\\OneDrive\\Рабочий стол\\python_progekt\\web-hardwear_scanner\\installer\\ninja_installer.py', reloading
+2024-05-26 19:57:22,888 INFO werkzeug MainThread :  * Restarting with stat
+2024-05-26 19:57:23,624 WARNING werkzeug MainThread :  * Debugger is active!
+2024-05-26 19:57:23,627 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 19:58:36,329 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.224:80
+2024-05-26 19:58:36,329 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-26 19:58:36,345 INFO werkzeug MainThread :  * Restarting with stat
+2024-05-26 19:58:37,068 WARNING werkzeug MainThread :  * Debugger is active!
+2024-05-26 19:58:37,068 INFO werkzeug MainThread :  * Debugger PIN: 653-806-865
+2024-05-26 19:58:39,178 INFO installer Thread-2 (process_request_thread) : РЈСЃС‚Р°РЅРѕРІРєР° С„Р°Р№Р»Р° \\LOOPA\C$\fakepath\6yst04af40cm90.exe РЅР° РєРѕРјРїСЊСЋС‚РµСЂ 192.168.1.224 (c IP: 192.168.1.224) РЅР°С‡Р°С‚Р°.
+2024-05-26 19:58:39,720 ERROR installer Thread-2 (process_request_thread) : РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ С„Р°Р№Р»Р° C:\fakepath\6yst04af40cm90.exe РЅР° РєРѕРјРїСЊСЋС‚РµСЂ 192.168.1.224 (IP: 192.168.1.224): Command '['powershell.exe', '-Command', "\n    $session = New-PSSession -ComputerName 192.168.1.224;\n    Invoke-Command -Session $session -ScriptBlock {\n        if (-Not (Test-Path -Path '\\\\192.168.1.224\\C$\\TEMP\\')) {\n            New-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\' -ItemType Directory;\n        }\n        Copy-Item -Path '\\\\LOOPA\\C$\\fakepath\\6yst04af40cm90.exe' -Destination '\\\\192.168.1.224\\C$\\TEMP\\';\n        $process = Start-Process msiexec.exe -ArgumentList '/i', '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe', '/quiet', '/norestart' -Wait -PassThru;\n        Remove-Item -Path '\\\\192.168.1.224\\C$\\TEMP\\6yst04af40cm90.exe';\n        return $process.ExitCode;\n    };\n    Remove-PSSession -Session $session;\n    "]' returned non-zero exit status 1.. РљРѕРґ РІРѕР·РІСЂР°С‚Р°: 1.
+2024-05-26 19:58:39,721 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:58:39] "POST /install_process HTTP/1.1" 200 -
+2024-05-26 19:58:39,830 INFO werkzeug Thread-3 (process_request_thread) : 192.168.1.224 - - [26/May/2024 19:58:39] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
