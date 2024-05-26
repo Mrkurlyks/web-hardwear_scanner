@@ -1,36 +1,31 @@
 import subprocess
+import os
 
 def install_package(remote_computer, file_path):
-        command = [
-            "powershell.exe",
-            "-Command",
-            f"""
-            Enable-PSRemoting -ComputerName {remote_computer};
-            Invoke-Command -Session $session -ScriptBlock {{
-                Start-Process msiexec.exe -ArgumentList '/i', '{file_path}', '/quiet', '/norestart' -Wait
-            }};
-            Remove-PSSession -Session $session
-            """
-        ]
+    temp_directory = f'\\\\{remote_computer}\\C$\\TEMP\\'
+    fail_way = f'\\\\{remote_computer}\\C$\\TEMP\\{os.path.basename(file_path)}'
+    
+    command = f"""
+    $session = New-PSSession -ComputerName {remote_computer};
+    Invoke-Command -Session $session -ScriptBlock {{
+        if (-Not (Test-Path -Path '{temp_directory}')) {{
+            New-Item -Path '{temp_directory}' -ItemType Directory;
+        }}
+        Copy-Item -Path '{file_path}' -Destination '{temp_directory}';
+        $process = Start-Process msiexec.exe -ArgumentList '/i', '{fail_way}', '/quiet', '/norestart' -Wait -PassThru;
+        Remove-Item -Path '{fail_way}';
+        return $process.ExitCode;
+    }};
+    Remove-PSSession -Session $session;
+    """
+    
+    try:
+        result = subprocess.run(['powershell.exe', '-Command', command], capture_output=True, text=True, check=True)
 
-        # Запуск команды PowerShell
-        result = subprocess.run(command, capture_output=True, text=True, shell=True)
-
-        # Проверка кода возврата
         if result.returncode == 0:
-            print("Установка прошла успешно.")
+            return ('Установка прошла успешно.')
         else:
-            print("Ошибка при установке.")
-            print("Код возврата:", result.returncode)
-            print("Вывод ошибки:", result.stderr)
+            return("Ошибка при установке.",result.returncode, result.stderr)
 
-        # Вывод информации об установке
-        print("Вывод:", result.stdout)
-
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
-
-# Пример вызова функции
-remote_computer = "RemoteComputerName"
-msi_path = "C:\\path\\to\\your\\installer.msi"
-install_msi_remotely(remote_computer, msi_path)
+    except subprocess.CalledProcessError as e:
+        return(f"Произошла ошибка: {e} Код возврата: {e.returncode} ошибкa: {e.stderr}")
