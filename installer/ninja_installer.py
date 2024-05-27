@@ -16,8 +16,8 @@ def convert_to_network_path(file_path):
     return network_path
 
 def install_package(remote_computer, file_path):
-    temp_directory = f'\\\\{remote_computer}\\C$\\TEMP\\'
-    fail_way = f'\\\\{remote_computer}\\C$\\TEMP\\{os.path.basename(file_path)}'
+    temp_directory = f'C\\TEMP\\'
+    fail_way = f'\\C\\TEMP\\{os.path.basename(file_path)}'
     network_file_path = convert_to_network_path(file_path)
     client_ip = request.remote_addr
     start_install_msg = f"Установка файла {network_file_path} на компьютер {remote_computer} (c IP: {client_ip}) начата."
